@@ -7,6 +7,7 @@ ENV STEAMPORT1="8766" \
     SERVER_PASSWORD="" \
     SERVER_ADMIN_PASSWORD="pzadmin" \
     SERVER_PORT="16261" \
+    SERVER_PORT2="16262" \
     SERVER_BRANCH="" \
     SERVER_PUBLIC="false" \
     SERVER_PUBLIC_NAME="Project Zomboid Docker Server" \
@@ -34,6 +35,7 @@ RUN useradd -u ${UID} -U -m -s /bin/false pzombie && usermod -G users pzombie
 EXPOSE $STEAMPORT1/udp
 EXPOSE $STEAMPORT2/udp
 EXPOSE $SERVER_PORT/udp
+EXPOSE $SERVER_PORT2/udp
 EXPOSE ${RCON_PORT}
 
 VOLUME ["/data/server-file", "/data/config"]
